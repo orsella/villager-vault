@@ -1,10 +1,216 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background-img {
+  background-color: #447838;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  padding-top: 2rem;
+  border-radius: 15px;
+  background-color: #eafcdc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  background-color: #088976;
+  /* border-radius: 5px; */
+  padding: 1rem;
+}
+
+.nav > a {
+  color: white;
+  text-decoration: none;
 }
 
 h1 {
-  color: blueviolet;
+  color: #088976;
+  font-size: 2.5em;
+  padding-bottom: 1rem;
+}
+
+.intro {
+  padding: 1.5rem 0rem;
+  text-align: center;
+  font-size: 20px;
+  color: #088976;
+}
+
+.whole-villagers-div {
+  padding-top: 1rem;
+}
+
+.villagers-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 2px solid #088976;
+  border-radius: 10px;
+  background-color: floralwhite;
+  filter: drop-shadow(8px 8px 5px #088976);
+}
+
+ul > li {
+  color: #088976;
+}
+
+.leaf {
+  height: 60px;
+  margin-right: 1rem;
+  filter: hue-rotate(20deg);
+}
+
+form {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 1rem;
+}
+
+form > label {
+  font-size: 20px;
+  padding: 0.5rem 0;
+  color: #088976;
+}
+
+form > input {
+  width: 80vw;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+form > input:hover {
+  border: 1px solid #088976;
+}
+
+form > select {
+  padding: 0.5rem;
+  border: none;
+  color: #088976;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.button-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  /* width: 100%; */
+  margin-top: 0.5rem;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  border: 1px solid #088976;
+  font-size: 20px;
+  color: #088976;
+  border-radius: 5px;
+}
+
+.submit:hover {
+  background-color: #088976;
+  color: white;
+}
+
+.tent:hover,
+.museum:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    margin: 2rem 0;
+    width: 70vw;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .background-img {
+    background-image: url("/assets/leaf-bg.png");
+    background-size: cover;
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100vh;
+  }
+  .nav {
+    background-color: #eafcdc;
+  }
+
+  .nav > a {
+    color: #088976;
+    font-size: 20px;
+  }
+
+  .tent,
+  .museum {
+    width: 300px;
+  }
+
+  .whole-villagers-div {
+    width: 450px;
+  }
+
+  .villagers-div {
+    padding-left: 1rem;
+  }
+
+  .villagers-div > ul {
+    padding-left: 1rem;
+  }
+
+  form {
+    width: 60vw;
+    padding-bottom: 1rem;
+  }
+
+  form > input {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  form {
+    width: 50vw;
+  }
+
+  form > input {
+    width: 50vw;
+  }
+
+  .whole-villagers-div {
+    width: 55vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .villagers-div {
+    margin: 1rem;
+    filter: none;
+  }
 }

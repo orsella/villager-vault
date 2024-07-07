@@ -33,3 +33,7 @@ What went really well and what could have gone better?
 Detailing useful external sources that helped you complete the assignment (e.g Youtube tutorials).
 Describing errors or bugs you encountered while completing your assignment.
 Requesting feedback about a specific part of your submission.
+
+- not sure how to stop the drop down default select from being an option. looked online and saw many responses but most disagreeing with each other and then terminal saying i shouldnt use the options i tried.
+
+currently the personality is being passed as a str instead of int and not sure why as its state sets it at 0
