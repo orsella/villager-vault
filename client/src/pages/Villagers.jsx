@@ -1,18 +1,13 @@
 import { useState, useEffect } from "react";
 import leaf from "/assets/leaf.png";
 
-// this could be changed to villagers component
 export default function Villagers() {
   const [villagers, setVillagers] = useState([]);
-
-  // function will run after component renders
-  // will need to update the depency array so that it runs again when new villager added
-  // this might actually be fine as setVillagers(data) should rerender
 
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://villager-vault.onrender.com/villagers",
+        "https://villager-vault-6wzz.onrender.com/villagers",
         {
           method: "GET",
           headers: {
@@ -25,6 +20,21 @@ export default function Villagers() {
     }
     fetchData();
   }, []);
+
+  async function handleDelete(id) {
+    const response = await fetch(
+      `https://villager-vault-6wzz.onrender.com/deleteFormData/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    const data = await response.json();
+    console.log("deleted villager:", data);
+
+    // Update the villagers state by filtering out the deleted villager
+    setVillagers(villagers.filter((villager) => villager.id !== id));
+  }
 
   return (
     <>
@@ -39,6 +49,12 @@ export default function Villagers() {
                 <li>Species: {item.species}</li>
                 <li>Personality: {item.type}</li>
                 <li>Favourite Coffee: {item.coffee}</li>
+                <button
+                  className="delete-button"
+                  onClick={() => handleDelete(item.id)}
+                >
+                  Delete
+                </button>
               </ul>
             </div>
           );

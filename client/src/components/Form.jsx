@@ -8,24 +8,29 @@ export default function Form() {
     villagerCoffee: "",
   });
 
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  //   console.log("the form values are:", formValues);
-  // }
-
   async function handleSubmit(event) {
     event.preventDefault();
     console.log("the form values are:", formValues);
 
-    const response = await fetch("https://villager-vault.onrender.com/form", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formValues),
-    });
+    const response = await fetch(
+      "https://villager-vault-6wzz.onrender.com/form",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      }
+    );
     const data = await response.json();
-    console.log(data);
+    console.log("Response from server:", data);
+
+    setFormValues({
+      villagerName: "",
+      villagerSpecies: "",
+      villagerPersonality: 0,
+      villagerCoffee: "",
+    });
   }
 
   function handleInputChange(event) {

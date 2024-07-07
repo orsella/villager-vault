@@ -10,10 +10,6 @@
   align-items: center;
 }
 
-.background-img {
-  background-color: #447838;
-}
-
 .main-container {
   width: 100vw;
   height: 100vh;
@@ -31,13 +27,16 @@
   display: flex;
   justify-content: space-around;
   background-color: #088976;
-  /* border-radius: 5px; */
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .nav > a {
   color: white;
   text-decoration: none;
+}
+
+.nav > a:hover {
+  transform: scale(1.1);
 }
 
 h1 {
@@ -79,6 +78,19 @@ ul > li {
   filter: hue-rotate(20deg);
 }
 
+.delete-button {
+  margin-top: 0.2rem;
+  background-color: white;
+  border: 1px solid #088976;
+  color: #088976;
+  border-radius: 5px;
+}
+
+.delete-button:hover {
+  background-color: #088976;
+  color: white;
+}
+
 form {
   width: 80vw;
   display: flex;
@@ -98,11 +110,12 @@ form > input {
   padding: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 5px;
-  border: 1px solid white;
+  border: 2px solid white;
+  color: #088976;
 }
 
 form > input:hover {
-  border: 1px solid #088976;
+  border: 2px solid #088976;
 }
 
 form > select {
@@ -111,6 +124,10 @@ form > select {
   color: #088976;
   border-radius: 5px;
   margin-bottom: 1rem;
+}
+
+form > select:focus {
+  outline-color: #088976;
 }
 
 .button-div {
@@ -124,7 +141,7 @@ form > select {
   margin-top: 0.5rem;
   padding: 0.5rem 2rem;
   background-color: white;
-  border: 1px solid #088976;
+  border: 2px solid #088976;
   font-size: 20px;
   color: #088976;
   border-radius: 5px;
@@ -152,7 +169,7 @@ form > select {
     background-image: url("/assets/leaf-bg.png");
     background-size: cover;
     position: fixed;
-    width: 100vw;
+    max-width: 100vw;
     left: 0;
     right: 0;
     z-index: -1;
@@ -211,6 +228,5 @@ form > select {
 
   .villagers-div {
     margin: 1rem;
-    filter: none;
   }
 }
