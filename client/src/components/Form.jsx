@@ -17,7 +17,7 @@ export default function Form() {
     event.preventDefault();
     console.log("the form values are:", formValues);
 
-    const response = await fetch("http://localhost:8000/form", {
+    const response = await fetch("https://villager-vault.onrender.com/form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

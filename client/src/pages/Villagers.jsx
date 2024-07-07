@@ -11,12 +11,15 @@ export default function Villagers() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:8000/villagers", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://villager-vault.onrender.com/villagers",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await response.json();
       setVillagers(data);
     }
