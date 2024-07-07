@@ -7,7 +7,7 @@ export default function Villagers() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://villager-vault-6wzz.onrender.com/villagers",
+        "https://villager-vault.onrender.com/villagers",
         {
           method: "GET",
           headers: {
@@ -23,7 +23,7 @@ export default function Villagers() {
 
   async function handleDelete(id) {
     const response = await fetch(
-      `https://villager-vault-6wzz.onrender.com/deleteFormData/${id}`,
+      `https://villager-vault.onrender.com/deleteFormData/${id}`,
       {
         method: "DELETE",
       }
